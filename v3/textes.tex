@@ -42,8 +42,7 @@
 
 \newenvironment{mychapter}[1]
 { 
-\section*{#1}   
-\addcontentsline{toc}{chapter}{#1}
+\section{#1}   
 \huge 
 }
 {  }
@@ -52,8 +51,8 @@
 
 \newenvironment{song}[1]
 { 
-\section*{#1}   
-\addcontentsline{toc}{section}{#1}
+\subsection{#1}   
+%\addcontentsline{toc}{section}{#1}
 \huge 
 }
 {  }
@@ -65,7 +64,9 @@
 
 
 %\tableofcontents
-\tableofcontents[hideallsubsections]
+\begin{KeepFromToc} %no TOC in TOC
+\tableofcontents
+\end{KeepFromToc}
 \clearpage
 %\chapter{ВЫСОЦКИЙ}
 \section{ВЫСОЦКИЙ}
