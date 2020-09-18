@@ -22,6 +22,22 @@
 \renewcommand*\contentsname{Зміст}
 
 
+% this is not works, gives an error
+%\usepackage{sectsty}
+%\sectionfont{\fontsize{12}{15}\selectfont}
+
+% to make section font different
+\usepackage{titlesec}
+\titleformat{\section}
+{\normalfont\fontsize{25}{35}\bfseries}{\thesection}{1em}{}
+
+\titleformat{\subsection}
+{\normalfont\fontsize{25}{35}\bfseries}{\thesection}{1em}{}
+
+% to remove section numbers but keep them in TOC
+\setcounter{secnumdepth}{0}
+
+
 \title{Songbook v3}
 
 \newenvironment{mychapter}[1]
@@ -37,7 +53,7 @@
 \newenvironment{song}[1]
 { 
 \section*{#1}   
-%\addcontentsline{toc}{section}{#1}
+\addcontentsline{toc}{section}{#1}
 \huge 
 }
 {  }
@@ -48,16 +64,20 @@
 
 
 
-\tableofcontents
-%\clearpage
-\chapter*{ВЫСОЦКИЙ}
+%\tableofcontents
+\tableofcontents[hideallsubsections]
+\clearpage
+%\chapter{ВЫСОЦКИЙ}
+\section{ВЫСОЦКИЙ}
+
 \clearpage
 
 {\huge
-\section*{Бег иноходца}
+%\section{Бег иноходца}
+\subsection{Бег иноходца}
 
 }
-\begin{multicols}{2}
+\begin{multicols*}{2}
 \noindent
 {\huge
 Я скачу, но я скачу иначе\\
@@ -82,7 +102,8 @@
 Зубоскалят первые ряды…\\
 Я согласен бегать в табуне —\\
 Но не под седлом и без узды!
- 
+
+\vfill\null
 \columnbreak  
 
 \noindent
@@ -114,10 +135,12 @@
 По камням, по лужам, по росе…\\
 Я впервые не был иноходцем —\\
 Я стремился выиграть, как все!\\
+
+\noindent
 Я впервые не был иноходцем —\\
 Я стремился выиграть, как все!\\
 }
-\end{multicols}
+\end{multicols*}
 
 \clearpage
 
