@@ -1,0 +1,156 @@
+% !TEX encoding = UTF-8 Unicode
+%\documentclass{report}
+\documentclass{memoir}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage{multicol}
+
+%\usepackage[letterpaper, total={6in, 8in}]{geometry}
+\usepackage[letterpaper, left=5mm, top=5mm, bottom=5mm, right=5mm ]{geometry}
+
+% use to assign specific font. need xelatex processor
+\usepackage{fontspec}
+
+\setromanfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont[Color={0019D4}]{Courier New}
+
+% set sans family as default (arial)
+\renewcommand{\familydefault}{\sfdefault}
+
+\renewcommand*\contentsname{Зміст}
+
+
+% this is not works, gives an error
+%\usepackage{sectsty}
+%\sectionfont{\fontsize{12}{15}\selectfont}
+
+% to make section font different
+\usepackage{titlesec}
+\titleformat{\section}
+{\normalfont\fontsize{25}{35}\bfseries}{\thesection}{1em}{}
+
+\titleformat{\subsection}
+{\normalfont\fontsize{25}{35}\bfseries}{\thesection}{1em}{}
+
+% to remove section numbers but keep them in TOC
+\setcounter{secnumdepth}{0}
+
+
+\title{Songbook v3}
+
+\newenvironment{mychapter}[1]
+{ 
+\section{#1}   
+\huge 
+}
+{  }
+	
+
+
+\newenvironment{song}[1]
+{ 
+\subsection{#1}   
+%\addcontentsline{toc}{section}{#1}
+\huge 
+}
+{  }
+	
+
+
+\begin{document}
+
+
+
+%\tableofcontents
+\begin{KeepFromToc} %no TOC in TOC
+\tableofcontents
+\end{KeepFromToc}
+\clearpage
+%\chapter{ВЫСОЦКИЙ}
+\section{ВЫСОЦКИЙ}
+
+\clearpage
+
+{\huge
+%\section{Бег иноходца}
+\subsection{Бег иноходца}
+
+}
+\begin{multicols*}{2}
+\noindent
+{\huge
+Я скачу, но я скачу иначе\\
+По камням, по лужам, по росе.\\
+Бег мой назван иноходью, значит\\
+По-другому, то есть - не как все.\\
+
+\noindent
+Мне набили раны на спине,\\*
+Я дрожу боками у воды.\\
+Я согласен бегать в табуне —\\
+Но не под седлом и без узды!\\
+
+\noindent
+Мне сегодня предстоит бороться \\
+Скачки! Я сегодня фаворит.\\
+Знаю, ставят все на иноходца,\\
+Но не я -жокей на мне хрипит!\\
+
+\noindent
+Он вонзает шпоры в ребра мне,\\
+Зубоскалят первые ряды…\\
+Я согласен бегать в табуне —\\
+Но не под седлом и без узды!
+
+\vfill\null
+\columnbreak  
+
+\noindent
+Нет, не будут золотыми горы \\
+Я последним цель пересеку:\\
+Я ему припомню эти шпоры,\\
+Засбою, отстану на скаку!..\\
+
+\noindent
+Колокол! Жокей мой на коне,\\
+Он смеётся в предвкушеньи мзды.\\
+Ох, как я бы бегал в табуне \\
+Но не под седлом и без узды!\\
+
+\noindent
+Что со мной, что делаю, как смею!\\
+Потакаю своему врагу!\\
+Я собою просто не владею —\\
+Я прийти не первым не могу!\\
+
+\noindent
+Что же делать? Остаётся мне\\
+Вышвырнуть жокея моего\\
+И бежать, как будто в табуне, —\\
+Под седлом, в узде, но без него!\\
+
+\noindent
+Я пришёл, а он в хвосте плетётся\\
+По камням, по лужам, по росе…\\
+Я впервые не был иноходцем —\\
+Я стремился выиграть, как все!\\
+
+\noindent
+Я впервые не был иноходцем —\\
+Я стремился выиграть, как все!\\
+}
+\end{multicols*}
+
+\clearpage
+
+\begin{mychapter}{Test}
+some test
+\end{mychapter}
+\begin{song}{Title}
+lalalal
+aalalla
+\end{song}
+
+\end{document}
