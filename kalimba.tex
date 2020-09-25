@@ -1,0 +1,90 @@
+% !TEX encoding = UTF-8 Unicode
+\documentclass{memoir}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage{multicol}
+\usepackage[letterpaper, left=5mm, top=5mm, bottom=5mm, right=5mm ]{geometry}
+
+% use to assign specific font. need xelatex processor
+\usepackage{fontspec}
+
+\setromanfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Courier New}
+% set sans family as default (arial)
+\renewcommand{\familydefault}{\sfdefault}
+\renewcommand*\contentsname{Зміст}
+
+
+% to make section font different
+\usepackage{titlesec}
+\titleformat{\section}
+{\normalfont\fontsize{25}{35}\bfseries}{\thesection}{1em}{}
+
+\titleformat{\subsection}
+{\normalfont\fontsize{25}{35}\bfseries}{\thesection}{1em}{}
+
+% to remove section numbers but keep them in TOC
+\setcounter{secnumdepth}{0}
+
+
+\title{Kalimba songbook v1}
+
+\newenvironment{song}[1]
+{ 
+\subsection{#1}   
+\noindent \huge \ttfamily \par
+}
+{  }
+	
+
+
+\begin{document}
+
+Source: Sound of Silence (Disturbed)
+"https://www.kalimbatabs.net/kalimba-tabs-tutorials/sound-of-silence/\#gettabs" \\
+letters in Brackets (     ) = play all together 
+
+letters with °  next to it means Higher note
+
+\begin{song}{Sound of silence}
+Hello darkness, my old friend 
+
+D  D  F  F  A  A    (C E G)
+
+I’ve come to talk with you again
+
+C  C  E  E  G E   (D F A)
+
+Because a vision softly creeping
+
+F  F  A  A  C°  C°   D°  D°  C°
+
+Left it’s seeds while I was sleeping
+
+F  F  A  A  C°  C°   D°  D°   (F A C)
+
+And the vision 
+
+F  F  A  A  C°  C°   D°
+
+That was planted in my brain
+
+D°  E°  F°  F°  E°  D°  C°
+
+Still remains
+
+C°  D°  C°  (D F A)
+
+Within the sound
+
+F  F  F  C°     
+
+Of silence
+
+E  F   (D F A)
+
+\end{song}
+
+\end{document}
